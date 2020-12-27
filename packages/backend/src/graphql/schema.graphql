@@ -1,0 +1,5 @@
+# import * from 'datamodel.graphql'
+
+type Query {
+  users: [User]
+}

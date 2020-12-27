@@ -1,0 +1,8 @@
+scalar DateTime
+
+type User {
+  id: ID!
+  email: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+}
