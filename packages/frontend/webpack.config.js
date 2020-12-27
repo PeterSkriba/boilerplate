@@ -50,7 +50,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new Dotenv({
-      path: path.join(__dirname, '.env.local'),
+      path: path.join(__dirname, '.env'),
       systemvars: true // for deploy env
     }),
   ],
