@@ -2,7 +2,7 @@
   "name": "frontend-boilerplate",
   "version": "1.0.0",
   "description": "Frontend Boilerplate",
-  "author": "Author Name",
+  "author": "PeterSkriba",
   "license": "ISC",
   "scripts": {
     "start": "webpack serve --hot --config webpack.config.js --mode development",
