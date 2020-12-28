@@ -9,8 +9,8 @@ const schema = makeExecutableSchema({
   typeDefs: importSchema('src/graphql/schema.graphql'),
   resolvers: {
     Query,
-    // Mutation,
-    // Subscription
+    Mutation,
+    Subscription,
   },
 })
 
@@ -33,6 +33,6 @@ const options = {
   },
 }
 
-server.start(options, () =>
-  console.log(`GraphQL server is running on port ${process.env.SERVER_PORT}`)
+server.start(options, ({ port }: { port: number }) =>
+  console.log(`🚀 GraphQL server is running on port ${port}.`)
 )
