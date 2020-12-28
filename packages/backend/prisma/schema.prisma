@@ -1,17 +1,19 @@
-// Database migrate: npx prisma migrate dev --name init --preview-feature
-
+// SETTINGS
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url      = env("DB_URL")
 }
 
+// MODELS
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(uuid())
+  email      String   @unique
+  password   String
+  first_name String?
+  last_name  String?
+  createdAt  DateTime @default(now())
 }

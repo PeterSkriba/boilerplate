@@ -3,3 +3,11 @@
 type Query {
   users: [User]
 }
+
+type Mutation {
+  _: Boolean # empty types not allowed, delete later
+}
+
+type Subscription {
+  _: Boolean # empty types not allowed, delete later
+}
