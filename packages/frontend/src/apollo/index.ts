@@ -1,7 +1,7 @@
 import ApolloClient from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-import * as constant from 'constants/global'
+import { AUTH_TOKEN } from 'constants/global'
 
 const client = new ApolloClient({
   uri:
@@ -10,7 +10,7 @@ const client = new ApolloClient({
       : process.env.GRAPHQL_ENDPOINT,
   cache: new InMemoryCache(),
   request: (operation) => {
-    const token = localStorage.getItem(constant.AUTH_TOKEN)
+    const token = localStorage.getItem(AUTH_TOKEN)
 
     operation.setContext({
       headers: {
