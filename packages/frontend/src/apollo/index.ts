@@ -8,7 +8,9 @@ const client = new ApolloClient({
     process.env.NODE_ENV === 'production'
       ? process.env.API_URL
       : process.env.GRAPHQL_ENDPOINT,
+
   cache: new InMemoryCache(),
+
   request: (operation) => {
     const token = localStorage.getItem(AUTH_TOKEN)
 
