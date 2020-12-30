@@ -1,3 +1,5 @@
 export const theme = {
-  colors: {},
+  color: {},
+  size: {},
+  shadow: {},
 }

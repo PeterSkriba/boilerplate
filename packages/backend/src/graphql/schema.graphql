@@ -1,11 +1,11 @@
 # import * from 'datamodel.graphql'
 
 type Query {
-  users: [User]
+  _: Boolean # empty types not allowed, delete later
 }
 
 type Mutation {
-  _: Boolean # empty types not allowed, delete later
+  _: Boolean # empty types not allowed, delete later
 }
 
 type Subscription {
