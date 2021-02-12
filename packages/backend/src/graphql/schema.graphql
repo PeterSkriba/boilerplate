@@ -1,13 +1,20 @@
 # import * from 'datamodel.graphql'
 
 type Query {
-  _: Boolean # empty types not allowed, delete later
+  user(email: String!): User!
 }
 
 type Mutation {
-  _: Boolean # empty types not allowed, delete later
+  createUser(data: CreateUserData!): User!
 }
 
 type Subscription {
   _: Boolean # empty types not allowed, delete later
+}
+
+input CreateUserData {
+  email: String
+  password: String
+  first_name: String
+  last_name: String
 }
