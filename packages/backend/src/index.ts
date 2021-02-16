@@ -14,15 +14,17 @@ const schema = makeExecutableSchema({
   },
 })
 
+const prisma = new PrismaClient()
+
 const server = new GraphQLServer({
   schema,
-  context: {
-    prisma: new PrismaClient(),
-  },
+  context: (req: any) => ({
+    req,
+    prisma,
+  }),
 })
 
 const options = {
-  port: process.env.SERVER_PORT,
   playground: process.env.NODE_ENV === 'production' ? false : '/',
   cors: {
     credentials: true,

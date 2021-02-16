@@ -13,6 +13,7 @@
     "@apollo/react-hooks": "^4.0.0",
     "@babel/polyfill": "^7.10.4",
     "apollo-boost": "^0.4.9",
+    "copy-webpack-plugin": "^7.0.0",
     "graphql": "^15.4.0",
     "i18next": "^19.8.4",
     "react": "^17.0.1",
