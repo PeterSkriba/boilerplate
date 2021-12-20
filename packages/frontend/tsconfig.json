@@ -10,12 +10,14 @@
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "esModuleInterop": true,
-    "target": "es2017",
+    "target": "esnext",
     "noEmit": true,
     "jsx": "react",
     "skipLibCheck": true,
     "rootDir": "./src",
     "baseUrl": "./src"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }

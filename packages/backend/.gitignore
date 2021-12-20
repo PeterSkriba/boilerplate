@@ -3,6 +3,8 @@ node_modules
 dist
 .env
 
+blueprints
+
 # Database
 dev.db
-migrations/
+migrations

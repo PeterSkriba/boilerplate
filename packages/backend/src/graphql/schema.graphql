@@ -1,7 +1,7 @@
 # import * from 'datamodel.graphql'
 
 type Query {
-  user(email: String!): User!
+  getUser(email: String!): User!
 }
 
 type Mutation {
@@ -9,7 +9,7 @@ type Mutation {
 }
 
 type Subscription {
-  _: Boolean # empty types not allowed, delete later
+  _empty: String # empty types not allowed, delete later
 }
 
 input CreateUserData {

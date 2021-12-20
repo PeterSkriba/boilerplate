@@ -1,9 +1,19 @@
-const { GraphQLServer } = require('graphql-yoga')
-const { PrismaClient } = require('@prisma/client')
-const { makeExecutableSchema } = require('@graphql-tools/schema')
-const { importSchema } = require('graphql-import')
+import { ApolloServer } from 'apollo-server'
+import { PrismaClient } from '@prisma/client'
+
+import { makeExecutableSchema } from '@graphql-tools/schema'
+import { importSchema } from 'graphql-import'
 
 import { Query, Mutation, Subscription } from '@/resolvers'
+
+const {
+  NODE_ENV,
+  FRONTEND_URL = '',
+  FRONTEND_LOCALHOST = '',
+  PLAYGROUND_URL = '',
+} = process.env
+
+const origin = NODE_ENV === 'production' ? FRONTEND_URL : FRONTEND_LOCALHOST
 
 const schema = makeExecutableSchema({
   typeDefs: importSchema('src/graphql/schema.graphql'),
@@ -16,25 +26,16 @@ const schema = makeExecutableSchema({
 
 const prisma = new PrismaClient()
 
-const server = new GraphQLServer({
+const server = new ApolloServer({
   schema,
-  context: (req: any) => ({
-    req,
+  cors: {
+    credentials: true,
+    origin: [PLAYGROUND_URL, origin],
+  },
+  context: ({ req }) => ({
+    ...req,
     prisma,
   }),
 })
 
-const options = {
-  playground: process.env.NODE_ENV === 'production' ? false : '/',
-  cors: {
-    credentials: true,
-    origin:
-      process.env.NODE_ENV === 'production'
-        ? process.env.FRONTEND_URL
-        : process.env.FRONTEND_LOCALHOST,
-  },
-}
-
-server.start(options, ({ port }: { port: number }) =>
-  console.log(`🚀 GraphQL server is running on port ${port}.`)
-)
+server.listen().then(({ url }) => console.log(`🚀 Server listening at ${url}`))

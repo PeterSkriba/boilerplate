@@ -4,4 +4,4 @@ dist
 .env
 
 # Blueprints
-/blueprints
+blueprints

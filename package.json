@@ -1,9 +1,21 @@
 {
-  "name": "boilerplate",
-  "version": "1.0.0",
-  "description": "Full Stack Boilerplate",
-  "author": "PeterSkriba",
-  "license": "ISC",
+  "name": "fullstack-boilerplate",
+  "version": "1.1.0",
+  "license": "MIT",
+  "repository": "github:PeterSkriba/boilerplate",
+  "author": "PeterSkriba <peter.skriba@gmail.com> (https://github.com/PeterSkriba)",
+  "homepage": "https://github.com/PeterSkriba/boilerplate#readme",
+  "description": "React, TypeScript, Apollo, Prisma, GraphQL, PostgreSQL full-stack boilerplate",
+  "keywords": [
+    "nodejs",
+    "react",
+    "typescript",
+    "apollo",
+    "prisma",
+    "graphql",
+    "postgresql",
+    "boilerplate"
+  ],
   "scripts": {
     "start": "run-p start:*",
     "start:frontend": "cd packages/frontend && yarn start",

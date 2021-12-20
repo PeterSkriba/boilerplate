@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { ApolloProvider } from '@apollo/react-hooks'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import client from 'apollo'
 import App from './App'
@@ -9,10 +9,10 @@ import App from './App'
 import 'styles/global.css'
 
 render(
-  <ApolloProvider client={client as any}>
-    <Router>
+  <ApolloProvider client={client}>
+    <BrowserRouter>
       <App />
-    </Router>
+    </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('root')
 )
