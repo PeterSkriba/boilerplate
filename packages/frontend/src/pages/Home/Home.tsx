@@ -7,7 +7,7 @@ import { GET_USER } from 'apollo/queries'
 
 import * as S from './styled'
 
-type QueryT = { getUser: UserM }
+type QueryT = { user: UserM }
 
 const Home = () => {
   const { data, loading, error } = useQuery<QueryT>(GET_USER, {
