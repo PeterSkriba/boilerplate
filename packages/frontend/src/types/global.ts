@@ -1,3 +1,1 @@
-export type Children = {
-  children: React.ReactNode[] | React.ReactNode | string
-}
+export type ChildrenT = React.ReactNode[] | React.ReactNode | string

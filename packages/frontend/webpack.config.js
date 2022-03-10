@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader?url=false'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.ttf$/,
@@ -39,10 +39,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    hot: true,
-    inline: true,
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
+    hot: 'only',
     historyApiFallback: true,
   },
   plugins: [
@@ -53,7 +59,7 @@ module.exports = {
     new CopyWebpackPlugin({ patterns: [{ from: 'public', to: '.' }] }),
     new Dotenv({
       path: path.join(__dirname, '.env'),
-      systemvars: true // for deploy env
+      systemvars: true, // for deploy env
     }),
   ],
 }

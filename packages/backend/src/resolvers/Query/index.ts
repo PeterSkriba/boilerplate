@@ -1,5 +1,5 @@
-import user from './user'
+import getUser from './getUser'
 
 export default {
-  user,
+  getUser,
 }

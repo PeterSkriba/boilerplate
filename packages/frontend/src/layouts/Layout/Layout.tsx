@@ -1,14 +1,13 @@
 import React from 'react'
-
-import { Children } from 'types/global'
+import { Outlet } from 'react-router-dom'
 
 import * as S from './styled'
 
-const Layout = ({ children }: Children) => (
+const Layout = () => (
   <S.Wrapper>
     <h1>Layout</h1>
 
-    {children}
+    <Outlet />
   </S.Wrapper>
 )
 

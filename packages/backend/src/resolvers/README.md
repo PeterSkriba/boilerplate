@@ -1,3 +1,3 @@
 # Resolvers
 
-GraphQL Prisma resolvers like Mutations, Queries and Resolvers.
+GraphQL Prisma resolvers like Mutations, Queries and Subscriptions.
